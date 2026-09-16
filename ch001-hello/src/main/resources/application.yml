@@ -1,0 +1,11 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: ch001-hello
+
+# ====== 百度 UidGenerator 配置 ======
+# 当前节点的 workerId，生产环境请通过数据库分配（DisposableWorkerIdAssigner）
+uid-generator:
+  worker-id: 1

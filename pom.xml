@@ -22,6 +22,14 @@
         <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
         <maven-war-plugin.version>3.3.1</maven-war-plugin.version>
         <spring-boot-maven-plugin.version>2.4.3</spring-boot-maven-plugin.version>
+
+        <!-- 百度 UidGenerator 相关依赖版本（统一在此管理） -->
+        <!--
+            注意：百度官方并未把 com.baidu.fsg:uid-generator 发布到任何 Maven 仓库。
+            项目根目录的 README 详细说明了如何从 GitHub 克隆并 mvn install 到本地。
+            安装成功后此处使用 1.0.0-SNAPSHOT 版本。
+        -->
+        <uid-generator.version>1.0.0-SNAPSHOT</uid-generator.version>
     </properties>
 
     <dependencyManagement>
@@ -40,6 +48,13 @@
                 <version>${spring-cloud.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
+            </dependency>
+
+            <!-- 百度 UidGenerator 统一版本管理 -->
+            <dependency>
+                <groupId>com.baidu.fsg</groupId>
+                <artifactId>uid-generator</artifactId>
+                <version>${uid-generator.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

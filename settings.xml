@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings xmlns="http://maven.apache.org/SETTINGS/1.2.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.2.0 https://maven.apache.org/xsd/settings-1.2.0.xsd">
+
+    <mirrors>
+        <!--
+            本项目专用 Maven 配置：把阿里云放在最前面以确保能拉到 com.baidu.fsg:uid-generator。
+            构建时用 mvn -s settings.xml 即可生效。
+        -->
+        <mirror>
+            <id>aliyun-public</id>
+            <mirrorOf>central</mirrorOf>
+            <name>Nexus aliyun (public)</name>
+            <url>https://maven.aliyun.com/repository/public</url>
+        </mirror>
+        <mirror>
+            <id>huaweicloud</id>
+            <mirrorOf>central</mirrorOf>
+            <name>huaweicloud</name>
+            <url>https://mirrors.huaweicloud.com/repository/maven/</url>
+        </mirror>
+    </mirrors>
+</settings>
