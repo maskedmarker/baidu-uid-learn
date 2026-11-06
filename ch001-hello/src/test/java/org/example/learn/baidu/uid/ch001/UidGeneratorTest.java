@@ -30,5 +30,9 @@ public class UidGeneratorTest {
 
         // 验证 2：UID 必须为正数
         org.junit.Assert.assertTrue(uid1 > 0);
+
+        // 验证 3: UID长度为18位数字
+        org.junit.Assert.assertEquals(18, String.valueOf(uid1).length());
+        org.junit.Assert.assertEquals(18, String.valueOf(uid2).length());
     }
 }
